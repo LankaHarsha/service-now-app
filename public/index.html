@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>AngularJs POC</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendors/angular/fullcalendar/dist/fullcalendar.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="snApp">
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-nav-collapse" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <a class="navbar-brand page-scroll" href="#page-top">Service Now</a>
+                </div>
+            </div>
+            <!-- /.container -->
+        </nav>
+        <div class="cal-container">
+            <div class="container cal-container" ng-controller="HomeController">
+                <div ng-if="users.length > 0">
+                    <users-calendar-view users-list="users"></users-calendar-view>
+                </div>
+                <div class="details-container" ng-if="usersDetails.length > 0">
+                    <div class="panel panel-default grid-panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center bold">User Details</h3>
+                        </div>
+                        <div class="panel-body">
+                            <grid-view items="usersDetails" keys="usrDetailsKeyConfig"></grid-view>
+                        </div>
+                    </div>
+                    <div class="panel panel-default grid-panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center bold">Maximum Busy User/Users</h3>
+                        </div>
+                        <div class="panel-body">
+                            <grid-view items="busyUsers" keys="busyUsersKeyConfig"></grid-view>
+                        </div>
+                    </div>
+                    <div class="panel panel-default grid-panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center bold">Maximum Free User/Users</h3>
+                        </div>
+                        <div class="panel-body">
+                            <grid-view items="freeUsers" keys="freeUsersKeyConfig"></grid-view>
+                        </div>
+                    </div>
+                    <div class="panel panel-default grid-panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center bold">User/Users Available For Scheduling Repeating Tasks</h3>
+                        </div>
+                        <div class="panel-body">
+                            <grid-view items="availableUsers" keys="availableUsersKeyConfig"></grid-view>
+                        </div>
+                    </div>
+                    <div class="panel panel-default grid-panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center bold">Users Busy With Task Work</h3>
+                        </div>
+                        <div class="panel-body">
+                            <grid-view items="workTasksList" keys="workTasksKeyConfig"></grid-view>
+                        </div>
+                    </div>
+                    <div class="panel panel-default grid-panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center bold">Users Busy With Task Meeting</h3>
+                        </div>
+                        <div class="panel-body">
+                            <grid-view items="meetingTasksList" keys="meetingTasksKeyConfig"></grid-view>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Library files -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/moment/min/moment.min.js"></script>
+    <script src="vendors/angular/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="vendors/angular/fullcalendar/dist/gcal.js"></script>
+    <script src="vendors/angular/angular.js"></script>
+    <script src="vendors/angular/angular-ui-bootstrap.js"></script>
+    <script src="vendors/angular/angular-ui-calendar/src/calendar.js"></script>
+    <!-- User Defined files -->
+    <script src="js/app.js"></script>
+    <script src="js/home/module.js"></script>
+    <script src="js/home/HomeController.js"></script>
+    <script src="js/home/components/UsersCalendarView/usersCalendarView.component.js"></script>
+    <script src="js/home/services/UserService.js"></script>
+    <script src="js/home/values/gridConfig.values.js"></script>
+    <script src="js/common/module.js"></script>
+    <script src="js/common/components/EventCalendar/eventCalendar.component.js"></script>
+    <script src="js/common/components/GridView/gridView.component.js"></script>
+    <script src="js/common/services/commonUtilsService.js"></script>
+    <script src="js/common/factories/restClient.factory.js"></script>
+</body>
+
+</html>

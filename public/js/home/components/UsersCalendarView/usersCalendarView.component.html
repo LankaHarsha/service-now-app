@@ -1,0 +1,12 @@
+<div class="users-cal-view">
+    <form name="usersEventCalForm" class="user-dd">
+        <select class="form-control" ng-model="selectedUser" ng-options="user.name for user in usersList" ng-change="onUserChange()">
+            <option value="" disabled>Select User</option>
+        </select>
+    </form>
+    <div class="row eve-calendar">
+        <div class="col-xs-12" ng-if="selectedUser && userEveSchedule.length > 0">
+            <event-calendar user-events="userEveSchedule"></event-calendar>
+        </div>
+    </div>
+</div>

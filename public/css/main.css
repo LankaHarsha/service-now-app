@@ -1,0 +1,32 @@
+.user-dd {
+    width: 35%;
+    margin: 0 auto;
+}
+
+.fc-toolbar {
+    margin-bottom: 0;
+    padding: 19px 5px 10px 5px;
+    background: #e6e6e6;
+}
+
+.eve-calendar,
+.grid {
+    margin: 0px auto;
+}
+
+.eve-calendar {
+    width: 70%;
+}
+
+.eve-calendar .event-calendar {
+    margin: 20px auto;
+}
+
+.grid-panel {
+    width: 75%;
+    margin: 20px auto;
+}
+
+.bold {
+    font-weight: bold;
+}

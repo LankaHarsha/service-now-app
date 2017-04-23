@@ -1,0 +1,8 @@
+<table class="table table-bordered table-striped grid">
+    <tr>
+        <th ng-repeat="header in keys track by $index">{{header.label | uppercase}}</th>
+    </tr>
+    <tr ng-repeat="object in items track by $index">
+        <td ng-repeat="header in keys track by $index">{{object[header.key]}}</td>
+    </tr>
+</table>
