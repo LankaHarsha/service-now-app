@@ -33,55 +33,13 @@
                 <div ng-if="users.length > 0">
                     <users-calendar-view users-list="users"></users-calendar-view>
                 </div>
-                <div class="details-container" ng-if="users.length > 0">
-                    <div class="panel panel-default grid-panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title text-center bold">User Details</h3>
-                        </div>
-                        <div class="panel-body">
-                            <grid-view items="usersDetails" keys="usrDetailsKeyConfig"></grid-view>
-                        </div>
-                    </div>
-                    <div class="panel panel-default grid-panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title text-center bold">Maximum Busy User/Users</h3>
-                        </div>
-                        <div class="panel-body">
-                            <grid-view items="busyUsers" keys="busyUsersKeyConfig"></grid-view>
-                        </div>
-                    </div>
-                    <div class="panel panel-default grid-panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title text-center bold">Maximum Free User/Users</h3>
-                        </div>
-                        <div class="panel-body">
-                            <grid-view items="freeUsers" keys="freeUsersKeyConfig"></grid-view>
-                        </div>
-                    </div>
-                    <div class="panel panel-default grid-panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title text-center bold">User/Users Available For Scheduling Repeating Tasks</h3>
-                        </div>
-                        <div class="panel-body">
-                            <grid-view items="availableUsers" keys="availableUsersKeyConfig"></grid-view>
-                        </div>
-                    </div>
-                    <div class="panel panel-default grid-panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title text-center bold">Users Busy With Task Work</h3>
-                        </div>
-                        <div class="panel-body">
-                            <grid-view items="workTasksList" keys="workTasksKeyConfig"></grid-view>
-                        </div>
-                    </div>
-                    <div class="panel panel-default grid-panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title text-center bold">Users Busy With Task Meeting</h3>
-                        </div>
-                        <div class="panel-body">
-                            <grid-view items="meetingTasksList" keys="meetingTasksKeyConfig"></grid-view>
-                        </div>
-                    </div>
+                <div class="details-container" ng-if="usersDetails.length > 0">
+                    <panel-view label="User Details" users-details="usersDetails" keys-config="usrDetailsKeyConfig"></panel-view>
+                    <panel-view label="Maximum Busy User/Users" users-details="busyUsers" keys-config="busyUsersKeyConfig"></panel-view>
+                    <panel-view label="Maximum Free User/Users" users-details="freeUsers" keys-config="freeUsersKeyConfig"></panel-view>
+                    <panel-view label="User/Users Available For Scheduling Repeating Tasks" users-details="availableUsers" keys-config="availableUsersKeyConfig"></panel-view>
+                    <panel-view label="Users Busy With Task Work" users-details="workTasksList" keys-config="workTasksKeyConfig"></panel-view>
+                    <panel-view label="Users Busy With Task Meeting" users-details="meetingTasksList" keys-config="meetingTasksKeyConfig"></panel-view>
                 </div>
             </div>
         </div>
@@ -104,6 +62,7 @@
 <script src="js/common/module.js"></script>
 <script src="js/common/components/EventCalendar/eventCalendar.component.js"></script>
 <script src="js/common/components/GridView/gridView.component.js"></script>
+<script src="js/common/components/PanelView/panelView.component.js"></script>
 <script src="js/common/services/commonUtilsService.js"></script>
 <script src="js/common/factories/restClient.factory.js"></script>
 
