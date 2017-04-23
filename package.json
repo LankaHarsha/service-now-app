@@ -4,7 +4,7 @@
     "description": "Task for service now",
     "main": "index.js",
     "scripts": {
-        "start": "node server"
+        "start": "npm install && node server"
     },
     "author": "Harsha Lanka",
     "license": "ISC",
