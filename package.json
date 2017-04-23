@@ -9,10 +9,12 @@
     "author": "Harsha Lanka",
     "license": "ISC",
     "devDependencies": {
-        "express": "^4.15.2",
         "jasmine-core": "^2.5.2",
         "karma": "^1.6.0",
         "karma-chrome-launcher": "^2.0.0",
         "karma-jasmine": "^1.1.0"
+    },
+    "dependencies": {
+        "express": "^4.15.2"
     }
 }
